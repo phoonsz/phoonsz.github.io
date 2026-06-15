@@ -569,7 +569,7 @@ body {
     gap: 1rem;
 }
 .footer-left p {
-    margin-bottom: 0rem;
+    margin-bottom: 0;
     color: var(--text-muted);
 }
 .footer-right {
