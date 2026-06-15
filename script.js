@@ -1,0 +1,278 @@
+// --- Conteúdo das páginas (HTML dinâmico) ---
+const pageContent = {
+    plans: `
+        <section class="section-hero">
+            <p class="hero-eyebrow">Fibra de Alta Velocidade</p>
+            <h1 class="hero-title">Internet além das fronteiras.</h1>
+            <p class="hero-subtitle">Conexão de fibra óptica de ponta a ponta com preços competitivos. Estabilidade e velocidade para sua casa ou empresa.</p>
+            <div class="hero-accent-line"></div>
+            <div class="plans-grid">
+                <article class="plan-card">
+                    <span class="plan-badge">Standard</span>
+                    <h3 class="plan-name">Standard</h3>
+                    <p class="plan-speed">300 <span class="plan-speed-unit">Mbps</span></p>
+                    <p class="plan-price">R$99,90<span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>Dados ilimitados</li>
+                        <li>Latência ultrabaixa</li>
+                        <li>Suporte por e-mail</li>
+                        <li>Roteador Wi-Fi incluso</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="plan-btn">Escolher Plano</a>
+                </article>
+                <article class="plan-card featured">
+                    <span class="plan-badge">Premium</span>
+                    <h3 class="plan-name">Premium</h3>
+                    <p class="plan-speed">600 <span class="plan-speed-unit">Mbps</span></p>
+                    <p class="plan-price">R$149,90<span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>Dados ilimitados</li>
+                        <li>Latência ultrabaixa</li>
+                        <li>Suporte prioritário 24/7</li>
+                        <li>IP fixo incluso</li>
+                        <li>Roteador Wi-Fi premium</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="plan-btn primary-btn">Escolher Plano</a>
+                </article>
+                <article class="plan-card">
+                    <span class="plan-badge">Ultra</span>
+                    <h3 class="plan-name">Ultra</h3>
+                    <p class="plan-speed">1 <span class="plan-speed-unit">Gbps</span></p>
+                    <p class="plan-price">R$249,90<span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>Dados ilimitados</li>
+                        <li>Conexão dedicada</li>
+                        <li>Suporte com gerente de conta</li>
+                        <li>SLA personalizado</li>
+                        <li>Instalação prioritária</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="plan-btn">Escolher Plano</a>
+                </article>
+            </div>
+            <div class="support-showcase">
+                <div class="support-image">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop&auto=format" 
+                         alt="Pessoa sorrindo usando notebook" 
+                         loading="lazy"
+                         onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;color:#6b829e;text-align:center;\'>📷<br><small>Imagem ilustrativa</small></div>'">
+                </div>
+                <div class="support-text">
+                    <h3>Suporte que realmente funciona</h3>
+                    <p>Na PhoonNet, você não fica sozinho. Nossa equipe de especialistas está pronta para ajudar você a aproveitar ao máximo sua conexão de fibra óptica.</p>
+                    <ul class="support-features-list">
+                        <li>Atendimento humano 24 horas por dia</li>
+                        <li>Instalação gratuita e sem complicação</li>
+                        <li>Monitoramento proativo da sua conexão</li>
+                        <li>Suporte remoto rápido e eficiente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    `,
+    contact: `
+        <section class="section">
+            <p class="section-label">Entre em Contato</p>
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-info-block">
+                    <div class="contact-item">
+                        <div class="contact-icon">&#9993;</div>
+                        <span>contato@phoonnet.com.br</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">&#9742;</div>
+                        <span>+55 (11) 91234-5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">&#9872;</div>
+                        <span>Sede PhoonNet — Av. Paulista, 8000, São Paulo, SP</span>
+                    </div>
+                    <a href="mailto:contato@phoonnet.com.br" class="contact-cta-btn">Enviar Mensagem</a>
+                </div>
+                <p class="section-body" style="margin-top:0;">
+                    Nossa equipe está disponível 24 horas para ajudar com qualquer dúvida. Seja você um usuário residencial ou empresa, estamos prontos para conectar você.
+                </p>
+            </div>
+        </section>
+    `,
+    history: `
+        <section class="section">
+            <p class="section-label">Nossa Trajetória</p>
+            <h2 class="section-title">História da PhoonNet</h2>
+            <div class="section-divider"></div>
+            <p class="section-body">
+                De uma startup focada em fibra óptica a uma das principais provedoras do país.
+            </p>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2015 — Fundação</h4><p>Nasceu em São Paulo com a missão de levar fibra óptica de qualidade.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2017 — Primeira rede metropolitana</h4><p>Anel de fibra na região central de São Paulo.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2019 — Expansão regional</h4><p>Interior paulista: Campinas, Sorocaba, São José dos Campos.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2021 — Backbone próprio</h4><p>Ligação São Paulo–Rio de Janeiro, menor latência.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2024 — Cobertura nacional</h4><p>500+ cidades, 2 milhões de clientes, planos de até 1 Gbps.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2026 — Hoje</h4><p>Expansão com fibra de última geração.</p></div></div>
+            </div>
+        </section>
+    `,
+    terms: `
+        <div style="background:var(--bg-card);border-radius:var(--border-radius);padding:2rem;box-shadow:var(--shadow-card);margin:1rem 0;">
+            <h2 style="color:var(--text-primary);">Termos de Serviço</h2>
+            <div style="width:45px;height:3px;background:var(--accent-line);margin:1rem 0 2rem;"></div>
+            <p><strong>1. Prestação do Serviço:</strong> Fibra óptica sujeita à disponibilidade técnica.</p>
+            <p><strong>2. Uso Justo:</strong> Planos ilimitados com política de uso justo.</p>
+            <p><strong>3. Cancelamento:</strong> Aviso prévio de 30 dias, sem multa.</p>
+            <a href="#" data-page="plans" class="plan-btn" style="width:auto;display:inline-block;margin-top:1.5rem;">← Voltar</a>
+        </div>
+    `,
+    privacy: `
+        <div style="background:var(--bg-card);border-radius:var(--border-radius);padding:2rem;box-shadow:var(--shadow-card);margin:1rem 0;">
+            <h2 style="color:var(--text-primary);">Política de Privacidade</h2>
+            <div style="width:45px;height:3px;background:var(--accent-line);margin:1rem 0 2rem;"></div>
+            <p><strong>1. Coleta de Dados:</strong> Apenas o necessário para os serviços.</p>
+            <p><strong>2. Compartilhamento:</strong> Não vendemos seus dados.</p>
+            <p><strong>3. Seus Direitos:</strong> Solicite exclusão ou exportação.</p>
+            <a href="#" data-page="plans" class="plan-btn" style="width:auto;display:inline-block;margin-top:1.5rem;">← Voltar</a>
+        </div>
+    `
+};
+
+let currentPage = 'plans';
+
+function loadPage(pageName) {
+    if (!pageContent[pageName]) return;
+    const dynamicDiv = document.getElementById('dynamicContent');
+    dynamicDiv.classList.add('fade-out');
+    setTimeout(() => {
+        dynamicDiv.innerHTML = pageContent[pageName];
+        currentPage = pageName;
+        dynamicDiv.classList.remove('fade-out');
+        dynamicDiv.classList.add('fade-in');
+        setTimeout(() => dynamicDiv.classList.remove('fade-in'), 350);
+        attachDynamicEventListeners();
+        updateActiveNavStates(pageName);
+        history.pushState({ page: pageName }, '', `#${pageName}`);
+    }, 200);
+}
+
+function attachDynamicEventListeners() {
+    document.querySelectorAll('[data-page]').forEach(el => {
+        el.removeEventListener('click', handlePageClick);
+        el.addEventListener('click', handlePageClick);
+    });
+}
+
+function handlePageClick(e) {
+    e.preventDefault();
+    const page = this.getAttribute('data-page');
+    if (page) loadPage(page);
+    if (sidebarOpen) closeSidebar();
+}
+
+function updateActiveNavStates(pageName) {
+    document.querySelectorAll('#desktopNav a, .sidebar-nav a, .footer-right a').forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if (linkPage === pageName) {
+            link.classList.add('active-nav');
+        } else {
+            link.classList.remove('active-nav');
+        }
+    });
+    const logo = document.querySelector('.nav-logo');
+    if (logo) logo.classList.remove('active-nav');
+}
+
+// --- Tema claro/escuro ---
+const themeToggle = document.getElementById('themeToggle');
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.innerHTML = '☀️';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeToggle.innerHTML = '🌙';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Carregar tema salvo ou preferência do sistema
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    setTheme('dark');
+} else if (savedTheme === 'light') {
+    setTheme('light');
+} else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+}
+
+// --- Sidebar e navegação ---
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const hamburger = document.getElementById('hamburger');
+const sidebarClose = document.getElementById('sidebarClose');
+let sidebarOpen = false;
+
+function openSidebar() {
+    sidebarOpen = true;
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+}
+function closeSidebar() {
+    sidebarOpen = false;
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+}
+function toggleSidebar() {
+    sidebarOpen ? closeSidebar() : openSidebar();
+}
+
+// --- Inicialização quando o DOM estiver pronto ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Eventos da sidebar
+    hamburger.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', closeSidebar);
+    sidebarClose.addEventListener('click', closeSidebar);
+
+    // Evento de clique nos links de navegação (já existentes no HTML)
+    document.querySelectorAll('[data-page]').forEach(el => {
+        el.addEventListener('click', handlePageClick);
+    });
+
+    // Fechar sidebar ao clicar em um link no mobile
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) setTimeout(closeSidebar, 100);
+        });
+    });
+
+    // Fechar sidebar ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && sidebarOpen) closeSidebar();
+    });
+
+    // Botão de voltar/avançar do navegador
+    window.addEventListener('popstate', (event) => {
+        loadPage(event.state?.page || 'plans');
+    });
+
+    // Tecla ESC fecha sidebar
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebarOpen) closeSidebar();
+    });
+
+    // Carregar página inicial
+    loadPage('plans');
+
+    // Evento do botão de tema (já existe, mas garantimos o clique)
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        setTheme(isDark ? 'light' : 'dark');
+    });
+});
