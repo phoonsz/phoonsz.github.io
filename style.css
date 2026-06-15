@@ -413,9 +413,8 @@ body {
 }
 .support-image {
     flex: 1 1 250px;
-    border-radius: 0.6rem;
     overflow: hidden;
-    background: var(--pastel-blue);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -426,7 +425,7 @@ body {
     height: auto;
     display: block;
     object-fit: cover;
-    border-radius: 0.6rem;
+    /* sem border-radius */
 }
 .support-text {
     flex: 1 1 280px;
