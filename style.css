@@ -1,608 +1,278 @@
-/* ===== TEMA CLARO (padrão) ===== */
-:root {
-    --bg-deep: #f0f4f8;
-    --bg-card: #ffffff;
-    --bg-elevated: #f8fafc;
-    --border-subtle: #dce5ec;
-    --border-hover: #b8ccdb;
-    --text-primary: #1a2639;
-    --text-secondary: #3d516b;
-    --text-muted: #6b829e;
-    --accent-glow: rgba(99, 139, 176, 0.12);
-    --accent-line: #a0c4db;
-    --white-soft: #ffffff;
-    --pastel-blue: #d0e3f0;
-    --pastel-blue-hover: #b8d3e5;
-    --pastel-blue-dark: #5b89a6;
-    --shadow-card: 0 8px 30px rgba(80, 110, 140, 0.08);
-    --shadow-card-hover: 0 20px 50px rgba(80, 110, 140, 0.15), 0 0 0 1px rgba(99, 139, 176, 0.15) inset;
-    --btn-primary-bg: #5b89a6;
-    --btn-primary-hover: #4a758f;
-    --footer-bg: #ffffff;
-    --navbar-bg: #ffffff;
+// --- Conteúdo das páginas (HTML dinâmico) ---
+const pageContent = {
+    plans: `
+        <section class="section-hero">
+            <p class="hero-eyebrow">Fibra de Alta Velocidade</p>
+            <h1 class="hero-title">Internet além das fronteiras.</h1>
+            <p class="hero-subtitle">Conexão de fibra óptica de ponta a ponta com preços competitivos. Estabilidade e velocidade para sua casa ou empresa.</p>
+            <div class="hero-accent-line"></div>
+            <div class="plans-grid">
+                <article class="plan-card">
+                    <span class="plan-badge">Standard</span>
+                    <h3 class="plan-name">Standard</h3>
+                    <p class="plan-speed">300 <span class="plan-speed-unit">Mbps</span></p>
+                    <p class="plan-price">R$99,90<span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>Dados ilimitados</li>
+                        <li>Latência ultrabaixa</li>
+                        <li>Suporte por e-mail</li>
+                        <li>Roteador Wi-Fi incluso</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="plan-btn">Escolher Plano</a>
+                </article>
+                <article class="plan-card featured">
+                    <span class="plan-badge">Premium</span>
+                    <h3 class="plan-name">Premium</h3>
+                    <p class="plan-speed">600 <span class="plan-speed-unit">Mbps</span></p>
+                    <p class="plan-price">R$149,90<span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>Dados ilimitados</li>
+                        <li>Latência ultrabaixa</li>
+                        <li>Suporte prioritário 24/7</li>
+                        <li>IP fixo incluso</li>
+                        <li>Roteador Wi-Fi premium</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="plan-btn primary-btn">Escolher Plano</a>
+                </article>
+                <article class="plan-card">
+                    <span class="plan-badge">Ultra</span>
+                    <h3 class="plan-name">Ultra</h3>
+                    <p class="plan-speed">1 <span class="plan-speed-unit">Gbps</span></p>
+                    <p class="plan-price">R$249,90<span>/mês</span></p>
+                    <ul class="plan-features">
+                        <li>Dados ilimitados</li>
+                        <li>Conexão dedicada</li>
+                        <li>Suporte com gerente de conta</li>
+                        <li>SLA personalizado</li>
+                        <li>Instalação prioritária</li>
+                    </ul>
+                    <a href="#" data-page="contact" class="plan-btn">Escolher Plano</a>
+                </article>
+            </div>
+            <div class="support-showcase">
+                <div class="support-image">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop&auto=format" 
+                         alt="Pessoa sorrindo usando notebook" 
+                         loading="lazy"
+                         onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;color:#6b829e;text-align:center;\'>📷<br><small>Imagem ilustrativa</small></div>'">
+                </div>
+                <div class="support-text">
+                    <h3>Suporte que realmente funciona</h3>
+                    <p>Na PhoonNet, você não fica sozinho. Nossa equipe de especialistas está pronta para ajudar você a aproveitar ao máximo sua conexão de fibra óptica.</p>
+                    <ul class="support-features-list">
+                        <li>Atendimento humano 24 horas por dia</li>
+                        <li>Instalação gratuita e sem complicação</li>
+                        <li>Monitoramento proativo da sua conexão</li>
+                        <li>Suporte remoto rápido e eficiente</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    `,
+    contact: `
+        <section class="section">
+            <p class="section-label">Entre em Contato</p>
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="section-divider"></div>
+            <div class="contact-grid">
+                <div class="contact-info-block">
+                    <div class="contact-item">
+                        <div class="contact-icon">&#9993;</div>
+                        <span>contato@phoonnet.com.br</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">&#9742;</div>
+                        <span>+55 (11) 91234-5678</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">&#9872;</div>
+                        <span>Sede PhoonNet — Av. Paulista, 8000, São Paulo, SP</span>
+                    </div>
+                    <a href="mailto:contato@phoonnet.com.br" class="contact-cta-btn">Enviar Mensagem</a>
+                </div>
+                <p class="section-body" style="margin-top:0;">
+                    Nossa equipe está disponível 24 horas para ajudar com qualquer dúvida. Seja você um usuário residencial ou empresa, estamos prontos para conectar você.
+                </p>
+            </div>
+        </section>
+    `,
+    history: `
+        <section class="section">
+            <p class="section-label">Nossa Trajetória</p>
+            <h2 class="section-title">História da PhoonNet</h2>
+            <div class="section-divider"></div>
+            <p class="section-body">
+                De uma startup focada em fibra óptica a uma das principais provedoras do país.
+            </p>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2015 — Fundação</h4><p>Nasceu em São Paulo com a missão de levar fibra óptica de qualidade.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2017 — Primeira rede metropolitana</h4><p>Anel de fibra na região central de São Paulo.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2019 — Expansão regional</h4><p>Interior paulista: Campinas, Sorocaba, São José dos Campos.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2021 — Backbone próprio</h4><p>Ligação São Paulo–Rio de Janeiro, menor latência.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2024 — Cobertura nacional</h4><p>500+ cidades, 2 milhões de clientes, planos de até 1 Gbps.</p></div></div>
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h4>2026 — Hoje</h4><p>Expansão com fibra de última geração.</p></div></div>
+            </div>
+        </section>
+    `,
+    terms: `
+        <div style="background:var(--bg-card);border-radius:var(--border-radius);padding:2rem;box-shadow:var(--shadow-card);margin:1rem 0;">
+            <h2 style="color:var(--text-primary);">Termos de Serviço</h2>
+            <div style="width:45px;height:3px;background:var(--accent-line);margin:1rem 0 2rem;"></div>
+            <p><strong>1. Prestação do Serviço:</strong> Fibra óptica sujeita à disponibilidade técnica.</p>
+            <p><strong>2. Uso Justo:</strong> Planos ilimitados com política de uso justo.</p>
+            <p><strong>3. Cancelamento:</strong> Aviso prévio de 30 dias, sem multa.</p>
+            <a href="#" data-page="plans" class="plan-btn" style="width:auto;display:inline-block;margin-top:1.5rem;">← Voltar</a>
+        </div>
+    `,
+    privacy: `
+        <div style="background:var(--bg-card);border-radius:var(--border-radius);padding:2rem;box-shadow:var(--shadow-card);margin:1rem 0;">
+            <h2 style="color:var(--text-primary);">Política de Privacidade</h2>
+            <div style="width:45px;height:3px;background:var(--accent-line);margin:1rem 0 2rem;"></div>
+            <p><strong>1. Coleta de Dados:</strong> Apenas o necessário para os serviços.</p>
+            <p><strong>2. Compartilhamento:</strong> Não vendemos seus dados.</p>
+            <p><strong>3. Seus Direitos:</strong> Solicite exclusão ou exportação.</p>
+            <a href="#" data-page="plans" class="plan-btn" style="width:auto;display:inline-block;margin-top:1.5rem;">← Voltar</a>
+        </div>
+    `
+};
+
+let currentPage = 'plans';
+
+function loadPage(pageName) {
+    if (!pageContent[pageName]) return;
+    const dynamicDiv = document.getElementById('dynamicContent');
+    dynamicDiv.classList.add('fade-out');
+    setTimeout(() => {
+        dynamicDiv.innerHTML = pageContent[pageName];
+        currentPage = pageName;
+        dynamicDiv.classList.remove('fade-out');
+        dynamicDiv.classList.add('fade-in');
+        setTimeout(() => dynamicDiv.classList.remove('fade-in'), 350);
+        attachDynamicEventListeners();
+        updateActiveNavStates(pageName);
+        history.pushState({ page: pageName }, '', `#${pageName}`);
+    }, 200);
 }
 
-/* ===== TEMA ESCURO ===== */
-[data-theme="dark"] {
-    --bg-deep: #121826;
-    --bg-card: #1e2a3a;
-    --bg-elevated: #16212e;
-    --border-subtle: #2d3e4f;
-    --border-hover: #3e5a6f;
-    --text-primary: #eef2f5;
-    --text-secondary: #cbdae6;
-    --text-muted: #8aa0b5;
-    --accent-glow: rgba(160, 196, 219, 0.1);
-    --accent-line: #4e7a9e;
-    --white-soft: #1e2a3a;
-    --pastel-blue: #2b4b6e;
-    --pastel-blue-hover: #3a5f82;
-    --pastel-blue-dark: #8ab3cf;
-    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.3);
-    --shadow-card-hover: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(160, 196, 219, 0.2) inset;
-    --btn-primary-bg: #4e7a9e;
-    --btn-primary-hover: #6a95b5;
-    --footer-bg: #16212e;
-    --navbar-bg: #1a2533;
+function attachDynamicEventListeners() {
+    document.querySelectorAll('[data-page]').forEach(el => {
+        el.removeEventListener('click', handlePageClick);
+        el.addEventListener('click', handlePageClick);
+    });
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+function handlePageClick(e) {
+    e.preventDefault();
+    const page = this.getAttribute('data-page');
+    if (page) loadPage(page);
+    if (sidebarOpen) closeSidebar();
 }
 
-html {
-    overflow-y: scroll;
-    background-color: var(--bg-deep);
+function updateActiveNavStates(pageName) {
+    document.querySelectorAll('#desktopNav a, .sidebar-nav a, .footer-right a').forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if (linkPage === pageName) {
+            link.classList.add('active-nav');
+        } else {
+            link.classList.remove('active-nav');
+        }
+    });
+    const logo = document.querySelector('.nav-logo');
+    if (logo) logo.classList.remove('active-nav');
 }
 
-body {
-    font-family: 'Segoe UI', 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
-    background-color: var(--bg-deep);
-    color: var(--text-primary);
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    padding-top: 4.5rem;
-    transition: background-color 0.3s, color 0.2s;
-}
-
-.main-content {
-    flex: 1 0 auto;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 100%;
-}
-
-/* ===== SIDEBAR ===== */
-.sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 25, 40, 0.45);
-    z-index: 90;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-}
-.sidebar-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: min(300px, 80vw);
-    height: 100vh;
-    background: var(--bg-card);
-    border-left: 1px solid var(--border-subtle);
-    z-index: 100;
-    transform: translateX(100%);
-    transition: transform 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 1.25rem;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.2);
-}
-.sidebar.active {
-    transform: translateX(0);
-}
-.sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-subtle);
-}
-.sidebar-logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-decoration: none;
-}
-.sidebar-logo span {
-    color: var(--pastel-blue-dark);
-}
-.sidebar-close {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid var(--border-subtle);
-    background: var(--bg-elevated);
-    font-size: 1.3rem;
-    cursor: pointer;
-    border-radius: 50%;
-    color: var(--text-secondary);
-}
-.sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-.sidebar-nav a {
-    padding: 0.9rem 1rem;
-    color: var(--text-secondary);
-    text-decoration: none;
-    border-radius: 0.6rem;
-    transition: all 0.2s;
-    font-weight: 500;
-    cursor: pointer;
-}
-.sidebar-nav a.nav-cta {
-    background: var(--btn-primary-bg);
-    color: #ffffff;
-    text-align: center;
-}
-.sidebar-footer-info {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-subtle);
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 80;
-    height: 4.5rem;
-    background: var(--navbar-bg);
-    border-bottom: 1px solid var(--border-subtle);
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-}
-.navbar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.nav-logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-decoration: none;
-    cursor: pointer;
-}
-.nav-logo span {
-    color: var(--pastel-blue-dark);
-}
-.nav-links {
-    display: flex;
-    gap: 0.6rem;
-    list-style: none;
-}
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
-    padding: 0.5rem 1.1rem;
-    border-radius: 0.6rem;
-    transition: all 0.2s;
-    font-weight: 500;
-    cursor: pointer;
-}
-.nav-links a.nav-cta-btn {
-    background: var(--btn-primary-bg);
-    color: #ffffff;
-}
-.theme-toggle {
-    background: transparent;
-    border: 1px solid var(--border-subtle);
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    background: var(--bg-elevated);
-    color: var(--text-primary);
-}
-.hamburger {
-    display: none;
-    width: 2.6rem;
-    height: 2.6rem;
-    background: transparent;
-    border: 1px solid var(--border-subtle);
-    border-radius: 50%;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-.hamburger span {
-    width: 18px;
-    height: 2px;
-    background: var(--text-secondary);
-    transition: all 0.2s;
-}
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(2.8px, 2.8px); }
-.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(2.8px, -2.8px); }
-
-/* ===== CONTEÚDO DINÂMICO ===== */
-.dynamic-area {
-    min-height: 400px;
-    transition: opacity 0.35s;
-}
-.dynamic-area.fade-out { opacity: 0.5; }
-.dynamic-area.fade-in { animation: fadeIn 0.35s; }
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== ESTILOS GERAIS ===== */
-.section-hero, .section {
-    padding: 2rem 0;
-}
-.section-hero { text-align: center; }
-.section-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--text-muted);
-}
-.section-title {
-    font-size: clamp(1.6rem, 3vw, 2.3rem);
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-}
-.section-divider {
-    width: 45px;
-    height: 3px;
-    background: var(--accent-line);
-    margin-bottom: 2rem;
-}
-.section-body {
-    color: var(--text-secondary);
-    max-width: 650px;
-    font-size: 1rem;
-}
-.hero-eyebrow {
-    font-size: 0.8rem;
-    letter-spacing: 0.18em;
-    color: var(--text-muted);
-}
-.hero-title {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-    color: var(--text-primary);
-}
-.hero-subtitle {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    max-width: 500px;
-    margin: 0 auto 2rem;
-}
-.hero-accent-line {
-    width: 55px;
-    height: 3px;
-    background: var(--accent-line);
-    margin: 0 auto 2rem;
-}
-
-/* ===== PLANOS ===== */
-.plans-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-.plan-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 1rem;
-    padding: 2rem 1.5rem;
-    transition: all 0.35s;
-    box-shadow: var(--shadow-card);
-}
-.plan-card.featured {
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-card-hover);
-}
-.plan-badge {
-    background: var(--pastel-blue-dark);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    display: inline-block;
-    margin-bottom: 1rem;
-}
-.plan-name {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-.plan-speed {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-.plan-speed-unit {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-.plan-price {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin: 0.75rem 0;
-    color: var(--text-primary);
-}
-.plan-features {
-    list-style: none;
-    margin-bottom: 1.5rem;
-}
-.plan-features li {
-    padding: 0.4rem 0;
-    border-bottom: 1px solid var(--border-subtle);
-    color: var(--text-secondary);
-}
-.plan-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 0.8rem;
-    border-radius: 0.6rem;
-    font-weight: 600;
-    border: 1px solid var(--border-subtle);
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-    color: var(--text-secondary);
-}
-.plan-btn.primary-btn {
-    background: var(--btn-primary-bg);
-    color: white;
-    border-color: var(--btn-primary-bg);
-}
-
-/* ===== SUPORTE SHOWCASE - COM VARIÁVEIS (RESPEITA TEMA ESCURO) ===== */
-.support-showcase {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-    margin: 2rem 0 3rem;
-    background: var(--bg-card);
-    border-radius: 1rem;
-    padding: 2rem;
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-card);
-    flex-wrap: wrap;
-}
-.support-image {
-    flex: 1 1 250px;
-    overflow: hidden;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-}
-.support-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    /* sem border-radius */
-}
-.support-text {
-    flex: 1 1 280px;
-}
-.support-text h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
-}
-.support-text p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-}
-.support-features-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-.support-features-list li {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-.support-features-list li::before {
-    content: '✓';
-    color: var(--pastel-blue-dark);
-    font-weight: 700;
-    font-size: 1rem;
-}
-
-/* Responsivo: empilha em telas pequenas */
-@media (max-width: 700px) {
-    .support-showcase {
-        flex-direction: column;
-        text-align: center;
-    }
-    .support-text {
-        text-align: left;
+// --- Tema claro/escuro ---
+const themeToggle = document.getElementById('themeToggle');
+function setTheme(theme) {
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggle.innerHTML = '☀️';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeToggle.innerHTML = '🌙';
+        localStorage.setItem('theme', 'light');
     }
 }
 
-/* ===== CONTATO ===== */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-}
-.contact-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid var(--border-subtle);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--bg-elevated);
-    color: var(--pastel-blue-dark);
-}
-.contact-cta-btn {
-    background: var(--btn-primary-bg);
-    color: white;
-    padding: 0.7rem 1.8rem;
-    border-radius: 0.6rem;
-    text-decoration: none;
-    display: inline-block;
+// Carregar tema salvo ou preferência do sistema
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    setTheme('dark');
+} else if (savedTheme === 'light') {
+    setTheme('light');
+} else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
 }
 
-/* ===== HISTÓRIA ===== */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1rem;
+// --- Sidebar e navegação ---
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('sidebarOverlay');
+const hamburger = document.getElementById('hamburger');
+const sidebarClose = document.getElementById('sidebarClose');
+let sidebarOpen = false;
+
+function openSidebar() {
+    sidebarOpen = true;
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
 }
-.timeline-item {
-    display: flex;
-    gap: 1rem;
+function closeSidebar() {
+    sidebarOpen = false;
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
 }
-.timeline-dot {
-    width: 12px;
-    height: 12px;
-    background: var(--accent-line);
-    border-radius: 50%;
-    margin-top: 0.4rem;
-}
-.timeline-content h4 {
-    color: var(--text-primary);
-}
-.timeline-content p {
-    color: var(--text-secondary);
+function toggleSidebar() {
+    sidebarOpen ? closeSidebar() : openSidebar();
 }
 
-/* ===== FOOTER ===== */
-.site-footer {
-    flex-shrink: 0;
-    border-top: 1px solid var(--border-subtle);
-    background: var(--footer-bg);
-    padding: 1.5rem 0;
-    margin-top: 2rem;
-    font-size: 0.85rem;
-}
-.footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-.footer-left p {
-    margin-bottom: 0.3rem;
-    color: var(--text-muted);
-}
-.footer-contact {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    color: var(--text-muted);
-}
-.footer-contact span {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-.footer-right {
-    display: flex;
-    gap: 1.5rem;
-}
-.footer-right a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    cursor: pointer;
-}
-.active-nav {
-    background: var(--pastel-blue);
-    color: var(--text-primary) !important;
-    font-weight: 600;
-}
-.nav-logo.active-nav {
-    background: transparent !important;
-    color: var(--text-primary) !important;
-}
+// --- Inicialização quando o DOM estiver pronto ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Eventos da sidebar
+    hamburger.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', closeSidebar);
+    sidebarClose.addEventListener('click', closeSidebar);
 
-/* ===== RESPONSIVO ===== */
-@media (max-width: 900px) {
-    .plans-grid { grid-template-columns: 1fr 1fr; }
-    .plan-card.featured { grid-column: 1 / -1; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .support-showcase { flex-direction: column; text-align: center; }
-}
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hamburger { display: flex; }
-    .navbar { padding: 0 1rem; height: 3.8rem; }
-    .main-content { padding: 0 1rem; }
-    .plans-grid { grid-template-columns: 1fr; }
-    .footer-inner { flex-direction: column; text-align: center; gap: 0.5rem; }
-    .footer-contact { justify-content: center; }
-    .footer-right { justify-content: center; }
-    body { padding-top: 3.8rem; }
-}
-@media (max-width: 400px) {
-    .plan-card { padding: 1.25rem; }
-    .plan-speed { font-size: 1.7rem; }
-}
+    // Evento de clique nos links de navegação (já existentes no HTML)
+    document.querySelectorAll('[data-page]').forEach(el => {
+        el.addEventListener('click', handlePageClick);
+    });
+
+    // Fechar sidebar ao clicar em um link no mobile
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) setTimeout(closeSidebar, 100);
+        });
+    });
+
+    // Fechar sidebar ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && sidebarOpen) closeSidebar();
+    });
+
+    // Botão de voltar/avançar do navegador
+    window.addEventListener('popstate', (event) => {
+        loadPage(event.state?.page || 'plans');
+    });
+
+    // Tecla ESC fecha sidebar
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebarOpen) closeSidebar();
+    });
+
+    // Carregar página inicial
+    loadPage('plans');
+
+    // Evento do botão de tema (já existe, mas garantimos o clique)
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        setTheme(isDark ? 'light' : 'dark');
+    });
+});
