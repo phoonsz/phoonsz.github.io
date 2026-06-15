@@ -486,6 +486,72 @@
             color: #ffffff;
         }
 
+        /* secao de suporte com imagem */
+        .support-showcase {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            margin: 2rem 0 3rem;
+            background: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid #dce5ec;
+            box-shadow: var(--shadow-card);
+            flex-wrap: wrap;
+        }
+        .support-image {
+            flex: 1 1 250px;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            background: #e6f0f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+        }
+        .support-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: var(--border-radius-sm);
+        }
+        .support-text {
+            flex: 1 1 280px;
+        }
+        .support-text h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a2639;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
+        }
+        .support-text p {
+            color: #3d516b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+        .support-features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .support-features-list li {
+            font-size: 0.9rem;
+            color: #3d516b;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .support-features-list li::before {
+            content: '✓';
+            color: #5b89a6;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
         /* secoes gerais */
         .section {
             padding: 4rem 0;
@@ -672,6 +738,13 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+            .support-showcase {
+                flex-direction: column;
+                text-align: center;
+            }
+            .support-text {
+                text-align: left;
+            }
         }
 
         @media (max-width: 768px) {
@@ -723,6 +796,9 @@
             }
             .contact-grid {
                 gap: 1.5rem;
+            }
+            .support-image {
+                min-height: 180px;
             }
         }
 
@@ -852,6 +928,26 @@
                     <a href="#contact" class="plan-btn">Escolher Plano</a>
                 </article>
             </div>
+
+            <!-- showcase de suporte com imagem -->
+            <div class="support-showcase">
+                <div class="support-image">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop&auto=format" 
+                         alt="Pessoa sorrindo usando notebook em casa com conexão estável" 
+                         loading="lazy"
+                         onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;color:#6b829e;text-align:center;\'>📷<br><small>Imagem de uso livre — Unsplash</small></div>'">
+                </div>
+                <div class="support-text">
+                    <h3>Suporte que realmente funciona</h3>
+                    <p>Na PhoonNet, você não fica sozinho. Nossa equipe de especialistas está pronta para ajudar você a aproveitar ao máximo sua conexão de fibra óptica.</p>
+                    <ul class="support-features-list">
+                        <li>Atendimento humano 24 horas por dia</li>
+                        <li>Instalação gratuita e sem complicação</li>
+                        <li>Monitoramento proativo da sua conexão</li>
+                        <li>Suporte remoto rápido e eficiente</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- secao de contato -->
@@ -956,4 +1052,170 @@
 
     <!-- modal termos de servico -->
     <div id="termsModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(15,25,40,0.55);align-items:center;justify-content:center;padding:1.5rem;">
-        <div style="background:#ffffff;border:1px solid #dce5ec;border-radius:16px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:2rem;color:#3d516b;
+        <div style="background:#ffffff;border:1px solid #dce5ec;border-radius:16px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:2rem;color:#3d516b;font-family:var(--font-stack);">
+            <h3 style="color:#1a2639;margin-bottom:1rem;">Termos de Serviço</h3>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">Estes Termos de Serviço regem o uso dos serviços de internet fibra da PhoonNet. Ao assinar, você concorda com estes termos.</p>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">1. <strong>Prestação do Serviço:</strong> A PhoonNet fornece conectividade via fibra óptica sujeita à disponibilidade técnica na região.</p>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">2. <strong>Uso Justo:</strong> Planos ilimitados estão sujeitos à política de uso justo. Uso excessivo pode resultar em redução temporária de velocidade em horários de pico.</p>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">3. <strong>Cancelamento:</strong> Planos podem ser cancelados a qualquer momento com aviso prévio de 30 dias. Não há multa por cancelamento antecipado.</p>
+            <button onclick="document.getElementById('termsModal').style.display='none'" style="margin-top:1rem;padding:0.7rem 1.8rem;background:#5b89a6;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;">Fechar</button>
+        </div>
+    </div>
+
+    <!-- modal politica de privacidade -->
+    <div id="privacyModal" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(15,25,40,0.55);align-items:center;justify-content:center;padding:1.5rem;">
+        <div style="background:#ffffff;border:1px solid #dce5ec;border-radius:16px;max-width:600px;width:100%;max-height:80vh;overflow-y:auto;padding:2rem;color:#3d516b;font-family:var(--font-stack);">
+            <h3 style="color:#1a2639;margin-bottom:1rem;">Política de Privacidade</h3>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">A PhoonNet respeita sua privacidade. Esta política explica como coletamos e tratamos seus dados.</p>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">1. <strong>Coleta de Dados:</strong> Coletamos apenas as informações necessárias para fornecer e melhorar nossos serviços de internet.</p>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">2. <strong>Compartilhamento:</strong> Não vendemos seus dados pessoais. Dados limitados podem ser compartilhados com parceiros de infraestrutura.</p>
+            <p style="font-size:0.9rem;line-height:1.7;margin-bottom:0.75rem;">3. <strong>Seus Direitos:</strong> Você pode solicitar a exclusão ou exportação dos seus dados a qualquer momento.</p>
+            <button onclick="document.getElementById('privacyModal').style.display='none'" style="margin-top:1rem;padding:0.7rem 1.8rem;background:#5b89a6;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;">Fechar</button>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script>
+        (function() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            const hamburger = document.getElementById('hamburger');
+            const sidebarClose = document.getElementById('sidebarClose');
+            const sidebarLinks = sidebar.querySelectorAll('a[data-nav]');
+            const termsLink = document.getElementById('termsLink');
+            const privacyLink = document.getElementById('privacyLink');
+            const termsModal = document.getElementById('termsModal');
+            const privacyModal = document.getElementById('privacyModal');
+            const desktopNavLinks = document.querySelectorAll('#desktopNav a[href^="#"]');
+
+            let sidebarOpen = false;
+
+            function openSidebar() {
+                sidebarOpen = true;
+                sidebar.classList.add('active');
+                overlay.classList.add('active');
+                hamburger.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeSidebar() {
+                sidebarOpen = false;
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
+
+            function toggleSidebar() {
+                if (sidebarOpen) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            }
+
+            hamburger.addEventListener('click', toggleSidebar);
+            hamburger.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                toggleSidebar();
+            });
+            overlay.addEventListener('click', closeSidebar);
+            overlay.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+            sidebarClose.addEventListener('click', closeSidebar);
+            sidebarClose.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeSidebar();
+            });
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    closeSidebar();
+                });
+                link.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    link.click();
+                });
+            });
+
+            desktopNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        const navHeight = getComputedStyle(document.documentElement).getPropertyValue('--nav-height').trim();
+                        const offset = parseFloat(navHeight) * parseFloat(getComputedStyle(document.documentElement).fontSize) + 16;
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = href.substring(1);
+                        const target = document.getElementById(targetId);
+                        if (target) {
+                            closeSidebar();
+                            setTimeout(() => {
+                                const navHeight = getComputedStyle(document.documentElement).getPropertyValue('--nav-height').trim();
+                                const offset = parseFloat(navHeight) * parseFloat(getComputedStyle(document.documentElement).fontSize) + 16;
+                                const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                                window.scrollTo({ top, behavior: 'smooth' });
+                            }, 350);
+                        }
+                    }
+                });
+            });
+
+            function openModal(modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal(modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+
+            termsLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(termsModal);
+            });
+            privacyLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal(privacyModal);
+            });
+
+            termsModal.addEventListener('click', function(e) {
+                if (e.target === termsModal) closeModal(termsModal);
+            });
+            privacyModal.addEventListener('click', function(e) {
+                if (e.target === privacyModal) closeModal(privacyModal);
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (termsModal.style.display === 'flex') closeModal(termsModal);
+                    if (privacyModal.style.display === 'flex') closeModal(privacyModal);
+                    if (sidebarOpen) closeSidebar();
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && sidebarOpen) {
+                    closeSidebar();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
