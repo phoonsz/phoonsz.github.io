@@ -17,9 +17,9 @@
         </div>
         <nav class="sidebar-nav">
             <a href="#" data-page="plans">Planos de Internet</a>
-            <a href="#" data-page="contact">Fale Conosco</a>
             <a href="#" data-page="history">Nossa História</a>
-            <a href="#" data-page="contact" class="nav-cta">Comece Agora</a>
+            <a href="#" data-page="contact">Fale Conosco</a>
+            <!-- Botão "Comece Agora" removido -->
         </nav>
         <div class="sidebar-footer-info">
             <span>contato@phoonnet.com.br</span>
@@ -35,9 +35,9 @@
             <nav>
                 <ul class="nav-links" id="desktopNav">
                     <li><a href="#" data-page="plans">Planos</a></li>
-                    <li><a href="#" data-page="contact">Contato</a></li>
                     <li><a href="#" data-page="history">História</a></li>
-                    <li><a href="#" data-page="contact" class="nav-cta-btn">Comece Agora</a></li>
+                    <li><a href="#" data-page="contact">Contato</a></li>
+                    <!-- Botão "Comece Agora" removido -->
                 </ul>
             </nav>
             <div style="display: flex; align-items: center; gap: 1rem;">
@@ -72,7 +72,7 @@
     </footer>
 
     <script>
-        // --- Conteúdo das páginas (mesmo de antes) ---
+        // --- Conteúdo das páginas ---
         const pageContent = {
             plans: `
                 <section class="section-hero">
@@ -272,7 +272,6 @@
         } else if (savedTheme === 'light') {
             setTheme('light');
         } else {
-            // Verifica preferência do sistema
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             setTheme(prefersDark ? 'dark' : 'light');
         }
@@ -282,7 +281,7 @@
             setTheme(isDark ? 'light' : 'dark');
         });
 
-        // --- Sidebar e navegação (mesmo código) ---
+        // --- Sidebar e navegação ---
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebarOverlay');
         const hamburger = document.getElementById('hamburger');
