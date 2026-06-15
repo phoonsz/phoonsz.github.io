@@ -190,13 +190,15 @@ body {
 }
 .navbar-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 .nav-logo {
+    flex: 0 0 auto;          /* largura fixa, não cresce */
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -206,10 +208,18 @@ body {
 .nav-logo span {
     color: var(--pastel-blue-dark);
 }
+.navbar nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
 .nav-links {
     display: flex;
     gap: 0.6rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .nav-links a {
     text-decoration: none;
@@ -222,6 +232,12 @@ body {
 .nav-links a.nav-cta-btn {
     background: var(--btn-primary-bg);
     color: #ffffff;
+}
+.navbar-inner > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 0 0 auto;
 }
 .theme-toggle {
     background: transparent;
@@ -569,7 +585,7 @@ body {
     gap: 1rem;
 }
 .footer-left p {
-    margin-bottom: 0;
+    margin-bottom: 0rem;
     color: var(--text-muted);
 }
 .footer-right {
@@ -647,7 +663,6 @@ body,
     .support-showcase { flex-direction: column; text-align: center; }
 }
 @media (max-width: 768px) {
-    .nav-links { display: none; }
     .hamburger { display: flex; }
     .navbar { padding: 0 1rem; height: 3.8rem; }
     .main-content { padding: 0 1rem; }
@@ -657,6 +672,18 @@ body,
     .footer-right { justify-content: center; }
     body { padding-top: 3.8rem; }
     .timeline.centered-timeline { padding: 0 1rem; }
+    .navbar nav {
+        position: static;
+        transform: none;
+        display: none;       /* esconde o menu no mobile, o hamburger assume */
+    }
+    .nav-links {
+        display: none;
+    }
+    /* Garantir que o logo e o botão hamburger fiquem nos cantos */
+    .navbar-inner {
+        justify-content: space-between;
+    }
 }
 @media (max-width: 400px) {
     .plan-card { padding: 1.25rem; }
